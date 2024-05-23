@@ -38,13 +38,15 @@ const getFullQuery = (
 };
 
 const getDefaultRequestOptions = ({
-  limit, query, userAgent, start, includeSites, excludeSites,
+  limit, query, userAgent, start, includeSites, excludeSites, gl, lr,
 }) => ({
   url: 'https://www.google.com/search',
   qs: {
     q: getFullQuery(query, includeSites, excludeSites),
     num: limit || defaultLimit,
     start: start || defaultStart,
+    gl: gl || 'us',
+    lr: lr || 'lang_en',
   },
   headers: {
     'User-Agent': userAgent || defaultUserAgent,

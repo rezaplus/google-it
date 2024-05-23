@@ -59,6 +59,14 @@ const optionDefinitions = [
   // modifies the search query by adding "-site:" operator for each comma-separated value,
   // combined with AND operator when there are multiple values
   { name: 'excludeSites', type: String },
+
+  // modifies the search query by adding "gl:" operator to restrict the search to a specific country
+  // (e.g. "gl:us" for United States)
+  { name: 'gl', type: String },
+
+  // modifies the search query by adding "lr:" operator to restrict the search to a specific language
+  // (e.g. "lr:lang_en" for English)
+  { name: 'lr', type: String },
 ];
 
 module.exports = optionDefinitions;
