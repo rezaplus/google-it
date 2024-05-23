@@ -88,6 +88,8 @@ export function getResults({
   snippetSelector,
   resultStatsSelector,
   cursorSelector,
+  gl,
+  lr
 }) {
   const $ = cheerio.load(data);
   let results = [];
@@ -148,6 +150,8 @@ export function getResponse({
   start,
   includeSites,
   excludeSites,
+  gl,
+  lr,
 }) {
   // eslint-disable-next-line consistent-return
   return new Promise((resolve, reject) => {
@@ -185,6 +189,8 @@ function googleIt(config) {
     resultStatsSelector,
     cursorSelector,
     start,
+    gl,
+    lr,
     diagnostics,
   } = config;
   return new Promise((resolve, reject) => {
@@ -200,6 +206,8 @@ function googleIt(config) {
         resultStatsSelector,
         cursorSelector,
         start,
+        gl,
+        lr,
       });
       const { statusCode } = response;
       if (results.length === 0 && statusCode !== 200 && !diagnostics) {
