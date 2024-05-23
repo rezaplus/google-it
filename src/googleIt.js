@@ -166,7 +166,7 @@ export function getResponse({
       return resolve({ body: fromString });
     }
     const defaultOptions = getDefaultRequestOptions({
-      limit, query, userAgent, start, includeSites, excludeSites,
+      limit, query, userAgent, start, includeSites, excludeSites, gl, lr
     });
     request({ ...defaultOptions, ...options }, (error, response, body) => {
       if (error) {
